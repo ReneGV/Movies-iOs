@@ -12,7 +12,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos()
     
     struct StoryboardInfo {
-        static let identifierCell = "confy"
+        static let identifierCell = "MainViewCell"
         static let identifierHeader = "HeaderView"
         static let identifierDetails = "ShowDetailsSegue"
         static let leftAndRigthPadding: CGFloat = 2.0
@@ -70,11 +70,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     //MARK: - UICollectionViewDelegate
     
     var selectedImage: UIImage!
+    var selectedSection: String!
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = photoCategories[indexPath.section]
         selectedImage = UIImage(named: category.imageNames[indexPath.item])
-        
+        selectedSection = category.categoryImageName
         performSegue(withIdentifier: StoryboardInfo.identifierDetails, sender: nil)
         
     }
@@ -84,6 +85,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         if segue.identifier == StoryboardInfo.identifierDetails{
             let detailVC = segue.destination as! MyDetailsViewController
             detailVC.image = selectedImage
+            detailVC.sectionTitle = selectedSection
         }
     }
     

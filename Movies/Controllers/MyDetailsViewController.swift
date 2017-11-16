@@ -13,11 +13,12 @@ class MyDetailsViewController: UIViewController {
     @IBOutlet weak var ImageView: UIImageView!
     
     var image: UIImage!
+    var sectionTitle: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         ImageView.image = image
-        navigationItem.title = "Serie"
+        navigationItem.title = sectionTitle
 
         // Do any additional setup after loading the view.
     }
