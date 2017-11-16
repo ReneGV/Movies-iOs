@@ -77,6 +77,7 @@
 			children = (
 				5AF348CC1FBD362A00E990C2 /* PhotosCollectionViewController.swift */,
 				5AF348D31FBD5BEF00E990C2 /* MyDetailsViewController.swift */,
+				8A33C6EA1FBABCB200C1C685 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -106,7 +107,6 @@
 				5AF348C01FBD28B000E990C2 /* Supporting Files */,
 				8A33C6EF1FBABCB200C1C685 /* Assets.xcassets */,
 				8A33C6F41FBABCB200C1C685 /* Info.plist */,
-				8A33C6EA1FBABCB200C1C685 /* ViewController.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";

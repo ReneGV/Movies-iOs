@@ -15,6 +15,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         static let identifierCell = "MainViewCell"
         static let identifierHeader = "HeaderView"
         static let identifierDetails = "ShowDetailsSegue"
+        //static let identifierLogin = "LoginSegue"
         static let leftAndRigthPadding: CGFloat = 2.0
         static let numberOfItemsPerRow: CGFloat = 3.0
     }
