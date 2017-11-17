@@ -58,13 +58,13 @@
                                     <action selector="buttonLoginGoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHd-y0-gvV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju1-iO-QQw">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju1-iO-QQw">
                                 <rect key="frame" x="67" y="438" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="sdu-nR-RdY"/>
                                     <constraint firstAttribute="height" constant="40" id="yah-RI-pdi"/>
                                 </constraints>
-                                <state key="normal" image="twitter-login"/>
+                                <state key="normal" image="sign-in-twitter-button"/>
                                 <connections>
                                     <action selector="buttonLoginTW:" destination="BYZ-38-t0r" eventType="touchUpInside" id="55i-QR-3FU"/>
                                 </connections>
@@ -243,6 +243,6 @@
         <image name="google-icon" width="470" height="92"/>
         <image name="icons8-menu-filled" width="50" height="50"/>
         <image name="s1" width="639" height="800"/>
-        <image name="twitter-login" width="701" height="143"/>
+        <image name="sign-in-twitter-button" width="240" height="40"/>
     </resources>
 </document>
