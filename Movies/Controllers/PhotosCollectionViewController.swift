@@ -10,6 +10,7 @@ import UIKit
 class PhotosCollectionViewController: UICollectionViewController {
     //var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos
     var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos()
+    var moviesByGender = [Gender]()
     
     struct StoryboardInfo {
         static let identifierCell = "MainViewCell"
@@ -33,26 +34,30 @@ class PhotosCollectionViewController: UICollectionViewController {
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         
+        moviesByGender = Gender.getAllMoviesByGender()        
         
     }
     // MARK: - UICollectionViewDataSources
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return photoCategories.count
+        //return photoCategories.count
+        return moviesByGender.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoCategories[section].imageNames.count
+        //return photoCategories[section].imageNames.count
+        return moviesByGender[section].moviesList.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryboardInfo.identifierCell, for: indexPath) as! MyCollectionViewCell
-        let photoCategory = photoCategories[indexPath.section]
-        let imageNames = photoCategory.imageNames
-        let imageName = imageNames[indexPath.item]
+        //let photoCategory = photoCategories[indexPath.section]
+        //let imageNames = photoCategory.imageNames
+        //let imageName = imageNames[indexPath.item]
         
-        cell.imageName = imageName
+        print(moviesByGender[indexPath.section].moviesList[indexPath.item].name)
+        cell.photoImageView.image = moviesByGender[indexPath.section].moviesList[indexPath.item].getCollectionViewImage()
         
         return cell
     }
@@ -61,8 +66,9 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: StoryboardInfo.identifierHeader, for: indexPath) as! MyCollectionReusableViewHeader
-        let category = photoCategories[indexPath.section]
-        sectionHeaderView.categoryTitle = category.title
+        //let category = photoCategories[indexPath.section]
+        let category = moviesByGender[indexPath.section].name
+        sectionHeaderView.categoryTitle = category
         
         return sectionHeaderView
         
@@ -72,11 +78,16 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     var selectedImage: UIImage!
     var selectedSection: String!
+    var selectedMovieId:Int!
+    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let category = photoCategories[indexPath.section]
-        selectedImage = UIImage(named: category.imageNames[indexPath.item])
-        selectedSection = category.categoryImageName
+        //let category = photoCategories[indexPath.section]
+        //selectedImage = UIImage(named: category.imageNames[indexPath.item])
+        //selectedSection = category.categoryImageName
+        
+        selectedMovieId = moviesByGender[indexPath.section].moviesList[indexPath.item].id
+        
         performSegue(withIdentifier: StoryboardInfo.identifierDetails, sender: nil)
         
     }
@@ -85,8 +96,9 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryboardInfo.identifierDetails{
             let detailVC = segue.destination as! MyDetailsViewController
-            detailVC.image = selectedImage
-            detailVC.sectionTitle = selectedSection
+            //detailVC.image = selectedImage
+            detailVC.sectionTitle = "Detallade pelicula"
+            detailVC.movie = Movie.getMovieById(id: selectedMovieId)
         }
     }
     

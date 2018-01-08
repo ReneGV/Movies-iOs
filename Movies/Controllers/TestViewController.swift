@@ -1,27 +1,32 @@
 //
-//  MyDetailsViewController.swift
+//  TestViewController.swift
 //  Movies
 //
-//  Created by Armando Corona Carrillo on 15/11/17.
-//  Copyright © 2017 ARGCVC. All rights reserved.
+//  Created by Armando Corona Carrillo on 07/01/18.
+//  Copyright © 2018 ARGCVC. All rights reserved.
 //
 
 import UIKit
 
-class MyDetailsViewController: UIViewController {
-    
-    @IBOutlet weak var ImageView: UIImageView!
-    
-    var image: UIImage!
-    var sectionTitle: String!
+class TestViewController: UIViewController {
 
-    var movie: Movie!
+    @IBOutlet weak var image: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ImageView.image = movie.getDetailImage()
-        navigationItem.title = sectionTitle
-
+        /*
+        var moviesByGender = Gender.getAllMoviesByGender()
+        image.image = moviesByGender.first?.moviesList.first?.getCollectionViewImage()
+        for gender in moviesByGender{
+            print(gender.name)
+            
+            for movie in gender.moviesList{
+                print("->" + movie.name)
+            }
+        }
+         */
+        var movie = Movie.getMovieById(id:1)
+        print(movie.name)
         // Do any additional setup after loading the view.
     }
 

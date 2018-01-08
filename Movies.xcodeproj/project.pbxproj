@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A20FB34200296500079064E /* VideoMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB33200296500079064E /* VideoMedia.swift */; };
+		5A20FB36200299EC0079064E /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB35200299EC0079064E /* Gender.swift */; };
+		5A20FB3820029D770079064E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB3720029D770079064E /* Movie.swift */; };
+		5A20FB3B2002A1990079064E /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB3A2002A1990079064E /* WebServices.swift */; };
+		5A20FB3D2002AB2A0079064E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB3C2002AB2A0079064E /* TestViewController.swift */; };
 		5AF348C71FBD318300E990C2 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF348C61FBD318300E990C2 /* MyCollectionViewCell.swift */; };
 		5AF348CD1FBD362A00E990C2 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF348CC1FBD362A00E990C2 /* PhotosCollectionViewController.swift */; };
 		5AF348CE1FBD374800E990C2 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF348C41FBD290C00E990C2 /* Photos.swift */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A20FB33200296500079064E /* VideoMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMedia.swift; sourceTree = "<group>"; };
+		5A20FB35200299EC0079064E /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		5A20FB3720029D770079064E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		5A20FB3A2002A1990079064E /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		5A20FB3C2002AB2A0079064E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		5AF348C41FBD290C00E990C2 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		5AF348C61FBD318300E990C2 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		5AF348CC1FBD362A00E990C2 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A20FB392002A1740079064E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5A20FB3A2002A1990079064E /* WebServices.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		5AF348C01FBD28B000E990C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				5AF348C41FBD290C00E990C2 /* Photos.swift */,
+				5A20FB33200296500079064E /* VideoMedia.swift */,
+				5A20FB35200299EC0079064E /* Gender.swift */,
+				5A20FB3720029D770079064E /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -75,9 +96,11 @@
 		5AF348C51FBD294B00E990C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5A20FB392002A1740079064E /* Util */,
 				5AF348CC1FBD362A00E990C2 /* PhotosCollectionViewController.swift */,
 				5AF348D31FBD5BEF00E990C2 /* MyDetailsViewController.swift */,
 				8A33C6EA1FBABCB200C1C685 /* ViewController.swift */,
+				5A20FB3C2002AB2A0079064E /* TestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,12 +206,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A20FB3820029D770079064E /* Movie.swift in Sources */,
 				5AF348D21FBD529B00E990C2 /* MyCollectionReusableViewHeader.swift in Sources */,
 				5AF348CE1FBD374800E990C2 /* Photos.swift in Sources */,
+				5A20FB3B2002A1990079064E /* WebServices.swift in Sources */,
+				5A20FB34200296500079064E /* VideoMedia.swift in Sources */,
 				8A33C6EB1FBABCB200C1C685 /* ViewController.swift in Sources */,
 				8A33C6E91FBABCB200C1C685 /* AppDelegate.swift in Sources */,
 				5AF348CD1FBD362A00E990C2 /* PhotosCollectionViewController.swift in Sources */,
+				5A20FB36200299EC0079064E /* Gender.swift in Sources */,
 				5AF348D41FBD5BEF00E990C2 /* MyDetailsViewController.swift in Sources */,
+				5A20FB3D2002AB2A0079064E /* TestViewController.swift in Sources */,
 				5AF348C71FBD318300E990C2 /* MyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F7D9PT8N8D;
+				DEVELOPMENT_TEAM = 6FHWMBXHXQ;
 				INFOPLIST_FILE = Movies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.varchardev.Movies;
@@ -342,7 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F7D9PT8N8D;
+				DEVELOPMENT_TEAM = 6FHWMBXHXQ;
 				INFOPLIST_FILE = Movies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.varchardev.Movies;
