@@ -9,7 +9,7 @@
 import UIKit
 class PhotosCollectionViewController: UICollectionViewController {
     //var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos
-    var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos()
+    //var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos()
     var moviesByGender = [Gender]()
     
     struct StoryboardInfo {
@@ -97,7 +97,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         if segue.identifier == StoryboardInfo.identifierDetails{
             let detailVC = segue.destination as! MyDetailsViewController
             //detailVC.image = selectedImage
-            detailVC.sectionTitle = "Detallade pelicula"
+            //detailVC.sectionTitle = "Detallade pelicula"
             detailVC.movie = Movie.getMovieById(id: selectedMovieId)
         }
     }

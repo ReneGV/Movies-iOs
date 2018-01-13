@@ -35,7 +35,7 @@ class PhotosLibrary{
     /*
      * fetchPhotos: Returns the data of the images that are going to be loaded in the collection view
      */
-    static func fetchPhotos() -> [PhotoCategory]{
+    /*static func fetchPhotos() -> [PhotoCategory]{
         // Create a array of photos data
         var categories = [PhotoCategory]()
         // Get a dictionary with the content category and image name
@@ -51,17 +51,17 @@ class PhotosLibrary{
             }
         }
         return categories
-    }
+    }*/
     
     /*
      * downloadPhotosData: Generates a dictionary with the images names and categories loades locally
      */
     
-    class func downloadPhotosData() -> [String : Any]{
+    /*class func downloadPhotosData() -> [String : Any]{
         let contentDictionary = ["Series":["categoryImageName":"Series", "imageNames" : PhotosLibrary.generateImage(categoryPrefix: "s", numberOfImages: 7)],
                      "Movies":["categoryImageName":"Movies", "imageNames" : PhotosLibrary.generateImage(categoryPrefix: "m", numberOfImages: 5)]]
         return contentDictionary
-    }
+    }*/
     
     /*
      *  func generateImage: generates a string array for searching images locally
@@ -69,13 +69,13 @@ class PhotosLibrary{
      * -param numberOfImages: max limit of results
      * -return: A string array, appending numbers eg. ["m1","m2","m3", "m4"]
      */
-    private class func generateImage(categoryPrefix: String, numberOfImages: Int) -> [String]{
+    /*private class func generateImage(categoryPrefix: String, numberOfImages: Int) -> [String]{
         var imageNames = [String]()
         
         for i in 1...numberOfImages{
             imageNames.append("\(categoryPrefix)\(i)")
         }
         return imageNames
-    }
+    }*/
     
 }
