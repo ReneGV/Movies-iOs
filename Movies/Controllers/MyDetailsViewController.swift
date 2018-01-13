@@ -37,6 +37,7 @@ class MyDetailsViewController: UIViewController {
         //ImageView.image = movie.getDetailImage()
         navigationItem.title = movie.gender.name
         //print(movie.description)
+        //self.tabBarController?.tabBar.isHidden = true
         
         
         // Do any additional setup after loading the view.
@@ -73,8 +74,14 @@ class MyDetailsViewController: UIViewController {
         print(spaceWidth)
         print(spaceHeight)
         
-        self.scrollView.frame = CGRect.init(x:0, y:45, width:screenWidth, height:screenHeight-45)
         
+        
+        
+        
+        //self.scrollView.frame = CGRect.init(x:0, y:0, width:screenWidth, height:screenHeight-70)
+        //self.scrollView.contentSize = CGSize.init(width: screenWidth, height: screenHeight*5)
+        
+     
         
         self.labelName.frame = CGRect.init(x: spaceWidth*2, y: spaceHeight, width: screenWidth-(spaceWidth*4), height: spaceHeight*2)
         self.labelName.textAlignment = NSTextAlignment.center
@@ -120,7 +127,7 @@ class MyDetailsViewController: UIViewController {
         //labelDateInfo.lineBreakMode = NSLineBreakMode.byWordWrapping
         //labelDateInfo.sizeToFit()
         //print(movie.productionDate)
-        y = y + labelDateInfo.frame.height// + spaceHeight*2
+        y = y + labelDateInfo.frame.height + spaceHeight
         
         labelLengthOrSeasons.frame = CGRect.init(x: spaceWidth, y: y, width: screenWidth/2 - spaceWidth, height: spaceHeight)
         labelLengthOrSeasons.textAlignment = NSTextAlignment.right
@@ -131,6 +138,14 @@ class MyDetailsViewController: UIViewController {
         labelLengthOrSeasonsInfo.textAlignment = NSTextAlignment.left
         labelLengthOrSeasonsInfo.text = String(movie.length)
         labelLengthOrSeasonsInfo.font = UIFont(name: "Arial", size: 18)
+        
+        y = y + labelLengthOrSeasons.frame.height + spaceHeight*2
+        
+        self.scrollView.frame = CGRect.init(x:0, y:0, width:screenWidth, height:screenHeight)
+        self.scrollView.contentSize = CGSize.init(width: screenWidth, height:
+            y + spaceHeight*2)
+        //self.scrollView.contentSize = CGSize.init(width: screenWidth, height: y + spaceHeight*10)
+        
         
         
         
@@ -149,6 +164,7 @@ class MyDetailsViewController: UIViewController {
         self.scrollView.addSubview(labelDateInfo)
         self.scrollView.addSubview(labelLengthOrSeasons)
         self.scrollView.addSubview(labelLengthOrSeasonsInfo)
+        
         
         //self.scrollView.contentSize = CGSize.init(width: screenWidth, height: screenHeight)
         
