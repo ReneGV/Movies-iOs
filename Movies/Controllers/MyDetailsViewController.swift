@@ -82,7 +82,7 @@ class MyDetailsViewController: UIViewController {
         self.labelName.font = UIFont(name:"Arial" ,size: 24)
         y = spaceHeight*4
         
-        ImageView.image = movie.getDetailImage()
+        ImageView.kf.setImage(with: movie.descriptionImageURL, placeholder: UIImage(named: "default-video-image"))
         ImageView.frame = CGRect.init(x: spaceWidth, y: CGFloat(y), width: screenWidth-(spaceWidth*2), height: screenHeight*(0.35))
         ImageView.alpha = 0.7
         y = y + screenHeight*(0.35)

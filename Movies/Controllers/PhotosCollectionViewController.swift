@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Kingfisher
+
 class PhotosCollectionViewController: UICollectionViewController {
     //var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos
     //var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos()
@@ -57,7 +59,8 @@ class PhotosCollectionViewController: UICollectionViewController {
         //let imageName = imageNames[indexPath.item]
         
         print(moviesByGender[indexPath.section].moviesList[indexPath.item].name)
-        cell.photoImageView.image = moviesByGender[indexPath.section].moviesList[indexPath.item].getCollectionViewImage()
+        cell.photoImageView.kf.setImage(with: moviesByGender[indexPath.section].moviesList[indexPath.item].collectionViewImageURL,
+                                        placeholder: UIImage(named: "default-movie") )
         
         return cell
     }
