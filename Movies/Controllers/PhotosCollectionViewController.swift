@@ -9,7 +9,8 @@
 import UIKit
 import Kingfisher
 
-class PhotosCollectionViewController: UICollectionViewController {
+class PhotosCollectionViewController: UICollectionViewController, UITabBarControllerDelegate{
+//class PhotosCollectionViewController: UITabBarController, UITabBarControllerDelegate, UICollectionViewDelegate {
     //var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos
     //var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos()
     var moviesByGender = [Gender]()
@@ -26,6 +27,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
+        //self.delegate = self
         super.viewDidLoad()
         
         //TODO: - change teh layout of the collection view
@@ -103,6 +105,29 @@ class PhotosCollectionViewController: UICollectionViewController {
             //detailVC.sectionTitle = "Detallade pelicula"
             detailVC.movie = Movie.getMovieById(id: selectedMovieId)
         }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let item = tabBarItem.tag
+        print(item)
+        
+        //let item = tabBarController?.tabBar.selectedItem?.tag
+        //tabBarController?.tabBar.selectedItem?.tag
+        //let item = tabBarController?.selectedIndex
+        //let item = tabBarController?.tabBar.selectedItem?.isEqual(0)
+        //tabBarController?.tabBar.selectedItem?.isEqual(0)
+        
+        //print(item)
+/*        if item == 0{
+            print("Im in movies")
+        }
+        else{
+            print("Im in series")
+        }
+  */
+        
     }
     
     

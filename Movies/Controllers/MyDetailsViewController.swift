@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyDetailsViewController: UIViewController {
+class MyDetailsViewController: UIViewController, UITabBarControllerDelegate, UITabBarDelegate {
     
     @IBOutlet weak var ImageView: UIImageView!
     
@@ -33,6 +33,9 @@ class MyDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.tabBarController?.delegate = MyDetailsViewController
+        //tabBarController?.delegate = MyDetailsViewController() as! UITabBarController as? UITabBarControllerDelegate
+        tabBarController?.delegate = self
         buildDetailScreen()
         //ImageView.image = movie.getDetailImage()
         navigationItem.title = movie.gender.name
@@ -49,6 +52,16 @@ class MyDetailsViewController: UIViewController {
 
     }
     
+    /*func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let tabBarIndex = tabBarController?.selectedIndex
+        if tabBarIndex == 1 {
+            print("Estoy en movies")
+        }
+        else{
+            print("I am in series")
+        }
+    }*/
+    
 
     /*
     // MARK: - Navigation
@@ -59,6 +72,10 @@ class MyDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillAppear(_ animated: Bool) {
+    
+    }
 
     func buildDetailScreen(){
         let screenSize = UIScreen.main.bounds
@@ -66,32 +83,24 @@ class MyDetailsViewController: UIViewController {
         let screenHeight = screenSize.height
         let spaceWidth = screenWidth/40
         let spaceHeight = screenHeight/40
-        var x:Double = 0
         var y:CGFloat = 0
-        print(screenSize)
-        print(screenWidth)
-        print(screenHeight)
-        print(spaceWidth)
-        print(spaceHeight)
+        let letterSize:CGFloat = 14
+        // "y" is used to set objects position
         
-        
-        
-        
-        
-        //self.scrollView.frame = CGRect.init(x:0, y:0, width:screenWidth, height:screenHeight-70)
-        //self.scrollView.contentSize = CGSize.init(width: screenWidth, height: screenHeight*5)
-        
+        self.scrollView.backgroundColor = UIColor.cyan
      
-        
+        //Set properties of label that contains movie´s name
         self.labelName.frame = CGRect.init(x: spaceWidth*2, y: spaceHeight, width: screenWidth-(spaceWidth*4), height: spaceHeight*2)
         self.labelName.textAlignment = NSTextAlignment.center
         self.labelName.text = movie.name
         self.labelName.font = UIFont(name:"Arial" ,size: 24)
         y = spaceHeight*4
         
+        
+        //Set properties of imageview that contains image detail
         ImageView.kf.setImage(with: movie.descriptionImageURL, placeholder: UIImage(named: "default-video-image"))
         ImageView.frame = CGRect.init(x: spaceWidth, y: CGFloat(y), width: screenWidth-(spaceWidth*2), height: screenHeight*(0.35))
-        ImageView.alpha = 0.7
+        ImageView.alpha = 1
         y = y + screenHeight*(0.35)
         
         /*labelDescription.frame = CGRect.init(x: spaceWidth*2, y: CGFloat(y) + spaceHeight, width: (screenWidth/2 - spaceWidth*2), height: spaceHeight)
@@ -99,46 +108,41 @@ class MyDetailsViewController: UIViewController {
         labelDescription.text = "Descripción: "
         labelDescription.font = UIFont(name: "Arial", size: 12)*/
         
+        
+        ////Set properties of label that contains movie´s description
         labelDescriptionInfo.frame = CGRect.init(x: spaceWidth, y: CGFloat(y)+spaceHeight, width: screenWidth-spaceWidth*2, height: screenHeight*(0.50))
-        labelDescriptionInfo.textAlignment = NSTextAlignment.center
+        labelDescriptionInfo.textAlignment = NSTextAlignment.justified
         labelDescriptionInfo.text = movie.description
-        labelDescriptionInfo.font = UIFont(name: "Arial", size: 18)
+        labelDescriptionInfo.font = UIFont(name: "Arial", size: letterSize)
         labelDescriptionInfo.numberOfLines = 0
         labelDescriptionInfo.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelDescriptionInfo.sizeToFit()
         y = y + labelDescriptionInfo.frame.height + spaceHeight*2
-    
-        //labelDate.frame = CGRect.init(x: spaceWidth, y: y, width: screenWidth/2 - spaceWidth, height: 1)
-        labelDate.frame = CGRect.init(x: screenWidth/2, y: y, width: -screenWidth/2 + spaceWidth, height: spaceHeight)
+        
+        
+        ////Set properties of labels that contains release date
+        labelDate.frame = CGRect.init(x: screenWidth/2-2, y: y, width: -screenWidth/2 + spaceWidth, height: spaceHeight)
         labelDate.textAlignment = NSTextAlignment.right
         labelDate.text = "Fecha de Lanzamiento: "
-        labelDate.font = UIFont(name: "Arial", size: 1)
-        //labelDate.numberOfLines = 0
-        //labelDate.lineBreakMode = NSLineBreakMode.byWordWrapping
-        //labelDate.sizeToFit()
-        //labelDate.frame.width = screenWidth/2-spaceWidth
-        
+        labelDate.font = UIFont(name: "Arial", size: letterSize)
         
         labelDateInfo.frame = CGRect.init(x: screenWidth/2, y: y, width: screenWidth/2 - spaceWidth, height: spaceHeight)
         labelDateInfo.textAlignment = NSTextAlignment.left
-        labelDateInfo.text = movie.productionDate
-        labelDateInfo.font = UIFont(name: "Arial", size: 18)
-        //labelDateInfo.numberOfLines = 0
-        //labelDateInfo.lineBreakMode = NSLineBreakMode.byWordWrapping
-        //labelDateInfo.sizeToFit()
-        //print(movie.productionDate)
+        labelDateInfo.text = obtainDate(originalDate: movie.productionDate)
+        labelDateInfo.font = UIFont(name: "Arial", size: letterSize)
         y = y + labelDateInfo.frame.height + spaceHeight
         
+        
+        ////Set properties of labels that contains length info
         labelLengthOrSeasons.frame = CGRect.init(x: spaceWidth, y: y, width: screenWidth/2 - spaceWidth, height: spaceHeight)
         labelLengthOrSeasons.textAlignment = NSTextAlignment.right
         labelLengthOrSeasons.text = "Duración: "
-        labelLengthOrSeasons.font = UIFont(name: "Arial", size: 18)
+        labelLengthOrSeasons.font = UIFont(name: "Arial", size: letterSize)
         
         labelLengthOrSeasonsInfo.frame = CGRect.init(x: screenWidth/2, y: y, width: screenWidth/2 - spaceWidth, height: spaceHeight)
         labelLengthOrSeasonsInfo.textAlignment = NSTextAlignment.left
         labelLengthOrSeasonsInfo.text = String(movie.length)
-        labelLengthOrSeasonsInfo.font = UIFont(name: "Arial", size: 18)
-        
+        labelLengthOrSeasonsInfo.font = UIFont(name: "Arial", size: letterSize)
         y = y + labelLengthOrSeasons.frame.height + spaceHeight*2
         
         self.scrollView.frame = CGRect.init(x:0, y:0, width:screenWidth, height:screenHeight)
@@ -154,7 +158,7 @@ class MyDetailsViewController: UIViewController {
         
         
         
-        
+        // Adding objects to be able to do scroll
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(labelName)
         self.scrollView.addSubview(ImageView)
@@ -164,14 +168,11 @@ class MyDetailsViewController: UIViewController {
         self.scrollView.addSubview(labelDateInfo)
         self.scrollView.addSubview(labelLengthOrSeasons)
         self.scrollView.addSubview(labelLengthOrSeasonsInfo)
-        
-        
-        //self.scrollView.contentSize = CGSize.init(width: screenWidth, height: screenHeight)
-        
-        
-        
-        //scrollView.
-        //ImageView.image.
-        
+    }
+    
+    // Function to truncate movie.date
+    func obtainDate(originalDate:String)->String {
+        let newDate = originalDate.components(separatedBy: "T")
+        return newDate[0]
     }
 }

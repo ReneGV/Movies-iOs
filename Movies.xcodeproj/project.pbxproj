@@ -13,6 +13,8 @@
 		5A20FB3B2002A1990079064E /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB3A2002A1990079064E /* WebServices.swift */; };
 		5A20FB3D2002AB2A0079064E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB3C2002AB2A0079064E /* TestViewController.swift */; };
 		5A20FB612002F7D30079064E /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB602002F7D30079064E /* Serie.swift */; };
+		5ADA58B2201062AA00FA2222 /* MyTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA58B1201062AA00FA2222 /* MyTabBarControllerViewController.swift */; };
+		5ADA58B420109CBC00FA2222 /* SeriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA58B320109CBC00FA2222 /* SeriesCollectionViewController.swift */; };
 		5AF348C71FBD318300E990C2 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF348C61FBD318300E990C2 /* MyCollectionViewCell.swift */; };
 		5AF348CD1FBD362A00E990C2 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF348CC1FBD362A00E990C2 /* PhotosCollectionViewController.swift */; };
 		5AF348CE1FBD374800E990C2 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF348C41FBD290C00E990C2 /* Photos.swift */; };
@@ -34,6 +36,8 @@
 		5A20FB3A2002A1990079064E /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		5A20FB3C2002AB2A0079064E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		5A20FB602002F7D30079064E /* Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serie.swift; sourceTree = "<group>"; };
+		5ADA58B1201062AA00FA2222 /* MyTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarControllerViewController.swift; sourceTree = "<group>"; };
+		5ADA58B320109CBC00FA2222 /* SeriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionViewController.swift; sourceTree = "<group>"; };
 		5AF348C41FBD290C00E990C2 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		5AF348C61FBD318300E990C2 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		5AF348CC1FBD362A00E990C2 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
@@ -114,8 +118,10 @@
 			children = (
 				5A20FB392002A1740079064E /* Util */,
 				5AF348CC1FBD362A00E990C2 /* PhotosCollectionViewController.swift */,
+				5ADA58B320109CBC00FA2222 /* SeriesCollectionViewController.swift */,
 				5AF348D31FBD5BEF00E990C2 /* MyDetailsViewController.swift */,
 				8A33C6EA1FBABCB200C1C685 /* ViewController.swift */,
+				5ADA58B1201062AA00FA2222 /* MyTabBarControllerViewController.swift */,
 				5A20FB3C2002AB2A0079064E /* TestViewController.swift */,
 			);
 			path = Controllers;
@@ -294,9 +300,11 @@
 				8A33C6E91FBABCB200C1C685 /* AppDelegate.swift in Sources */,
 				5AF348CD1FBD362A00E990C2 /* PhotosCollectionViewController.swift in Sources */,
 				5A20FB36200299EC0079064E /* Gender.swift in Sources */,
+				5ADA58B2201062AA00FA2222 /* MyTabBarControllerViewController.swift in Sources */,
 				5AF348D41FBD5BEF00E990C2 /* MyDetailsViewController.swift in Sources */,
 				5A20FB3D2002AB2A0079064E /* TestViewController.swift in Sources */,
 				5AF348C71FBD318300E990C2 /* MyCollectionViewCell.swift in Sources */,
+				5ADA58B420109CBC00FA2222 /* SeriesCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
