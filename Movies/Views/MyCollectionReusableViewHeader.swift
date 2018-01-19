@@ -14,7 +14,6 @@ class MyCollectionReusableViewHeader: UICollectionReusableView {
     var categoryTitle: String! {
         didSet {
             categoryTitleLabel.text = categoryTitle
-            
         }
     }
     

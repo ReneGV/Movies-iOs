@@ -201,7 +201,7 @@
         <!--Whatch+-->
         <scene sceneID="4Mh-yA-g8N">
             <objects>
-                <collectionViewController id="mWY-Qi-c7w" customClass="PhotosCollectionViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="mWY-Qi-c7w" customClass="SeriesCollectionViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jaw-4f-lyD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,7 +213,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainViewCell" id="gWK-OB-h2B" customClass="MyCollectionViewCell" customModule="Movies" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SerieViewCell" id="gWK-OB-h2B" customClass="MyCollectionViewCell" customModule="Movies" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="120" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -236,7 +236,7 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HeaderView" id="1UU-vN-IGm" customClass="MyCollectionReusableViewHeader" customModule="Movies" customModuleProvider="target">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SerieHeaderView" id="1UU-vN-IGm" customClass="MyCollectionReusableViewHeader" customModule="Movies" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -267,7 +267,7 @@
                     <navigationItem key="navigationItem" title="Whatch+" id="Jn9-AG-ypD"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="bpS-RN-bsa" kind="show" id="Ivi-dN-6ve"/>
+                        <segue destination="bpS-RN-bsa" kind="show" identifier="ShowSerieDetailSegue" id="Ivi-dN-6ve"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Te-hP-6OR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,7 +277,7 @@
         <!--My Details View Controller-->
         <scene sceneID="AYL-Fs-9lX">
             <objects>
-                <viewController id="Kbd-XK-r4E" customClass="MyDetailsViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Kbd-XK-r4E" customClass="MyDetailsViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aqr-xB-X7Q" customClass="MyCollectionReusableViewHeader" customModule="Movies" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -298,10 +298,10 @@
             </objects>
             <point key="canvasLocation" x="1465" y="798"/>
         </scene>
-        <!--My Details View Controller-->
+        <!--My Series Details View Controller-->
         <scene sceneID="c3w-19-VJU">
             <objects>
-                <viewController id="bpS-RN-bsa" customClass="MyDetailsViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="bpS-RN-bsa" customClass="MySeriesDetailsViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nfp-6f-BHV" customClass="MyCollectionReusableViewHeader" customModule="Movies" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

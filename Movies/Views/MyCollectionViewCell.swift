@@ -12,7 +12,6 @@ class MyCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
     
-    
     var imageName: String! {
         didSet {
             photoImageView.image = UIImage(named: imageName)

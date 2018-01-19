@@ -13,6 +13,7 @@
 		5A20FB3B2002A1990079064E /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB3A2002A1990079064E /* WebServices.swift */; };
 		5A20FB3D2002AB2A0079064E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB3C2002AB2A0079064E /* TestViewController.swift */; };
 		5A20FB612002F7D30079064E /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20FB602002F7D30079064E /* Serie.swift */; };
+		5AA8226E20117C770087C740 /* MySerieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8226D20117C770087C740 /* MySerieDetailsViewController.swift */; };
 		5ADA58B2201062AA00FA2222 /* MyTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA58B1201062AA00FA2222 /* MyTabBarControllerViewController.swift */; };
 		5ADA58B420109CBC00FA2222 /* SeriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA58B320109CBC00FA2222 /* SeriesCollectionViewController.swift */; };
 		5AF348C71FBD318300E990C2 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF348C61FBD318300E990C2 /* MyCollectionViewCell.swift */; };
@@ -36,6 +37,7 @@
 		5A20FB3A2002A1990079064E /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		5A20FB3C2002AB2A0079064E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		5A20FB602002F7D30079064E /* Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serie.swift; sourceTree = "<group>"; };
+		5AA8226D20117C770087C740 /* MySerieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySerieDetailsViewController.swift; sourceTree = "<group>"; };
 		5ADA58B1201062AA00FA2222 /* MyTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		5ADA58B320109CBC00FA2222 /* SeriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionViewController.swift; sourceTree = "<group>"; };
 		5AF348C41FBD290C00E990C2 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				5ADA58B320109CBC00FA2222 /* SeriesCollectionViewController.swift */,
 				5AF348D31FBD5BEF00E990C2 /* MyDetailsViewController.swift */,
 				8A33C6EA1FBABCB200C1C685 /* ViewController.swift */,
+				5AA8226D20117C770087C740 /* MySerieDetailsViewController.swift */,
 				5ADA58B1201062AA00FA2222 /* MyTabBarControllerViewController.swift */,
 				5A20FB3C2002AB2A0079064E /* TestViewController.swift */,
 			);
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA8226E20117C770087C740 /* MySerieDetailsViewController.swift in Sources */,
 				5A20FB3820029D770079064E /* Movie.swift in Sources */,
 				5AF348D21FBD529B00E990C2 /* MyCollectionReusableViewHeader.swift in Sources */,
 				5AF348CE1FBD374800E990C2 /* Photos.swift in Sources */,

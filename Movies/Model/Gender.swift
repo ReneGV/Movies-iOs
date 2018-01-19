@@ -13,7 +13,7 @@ class Gender {
     var name = "undefined"
     var moviesList:[Movie] = []
     //TODO change VideoMedia for Series class
-    var seriesList:[VideoMedia] = []
+    var seriesList:[Serie] = []
     
     // Default constructor
     init(){
@@ -38,5 +38,26 @@ class Gender {
             genderList.append(gender)
         }
         return genderList
+    }
+    
+    
+    static func getAllSeriesByGender() -> [Gender]{
+        let allSeriesByGenderDictionary = WebServiceHandler.getAllTvSeriesData()
+        //print(allSeriesByGenderDictionary)
+        var genderListSeries:[Gender] = []
+        for(genderName, seriesArray) in allSeriesByGenderDictionary{
+            //print(genderName)
+            let gender = Gender(name:genderName)
+            //print(gender)
+            for serie in seriesArray{
+                print(seriesArray)
+                gender.seriesList.append(Serie(id: serie["id"] as! Int,
+                                               name: serie["name"] as! String,
+                                               collectionViewImageURL: serie["collectionViewImage"] as! String))
+            }
+            //print(gender)
+            genderListSeries.append(gender)
+        }
+        return genderListSeries
     }
 }
