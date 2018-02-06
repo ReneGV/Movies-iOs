@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MyDetailsViewController: UIViewController, UITabBarControllerDelegate, UITabBarDelegate {
+class MyDetailsViewController: UIViewController {
     
     @IBOutlet weak var ImageView: UIImageView!
     
@@ -34,15 +34,10 @@ class MyDetailsViewController: UIViewController, UITabBarControllerDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tabBarController?.delegate = MyDetailsViewController
-        //tabBarController?.delegate = MyDetailsViewController() as! UITabBarController as? UITabBarControllerDelegate
-        tabBarController?.delegate = self
-        buildDetailScreen()
-        //ImageView.image = movie.getDetailImage()
-        navigationItem.title = movie.gender.name
-        //print(movie.description)
-        //self.tabBarController?.tabBar.isHidden = true
         
+        buildDetailScreen()
+        
+        navigationItem.title = movie.gender.name
         
         // Do any additional setup after loading the view.
     }
@@ -53,17 +48,6 @@ class MyDetailsViewController: UIViewController, UITabBarControllerDelegate, UIT
 
     }
     
-    /*func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        let tabBarIndex = tabBarController?.selectedIndex
-        if tabBarIndex == 1 {
-            print("Estoy en movies")
-        }
-        else{
-            print("I am in series")
-        }
-    }*/
-    
-
     /*
     // MARK: - Navigation
 
@@ -86,8 +70,8 @@ class MyDetailsViewController: UIViewController, UITabBarControllerDelegate, UIT
         let spaceHeight = screenHeight/40
         var y:CGFloat = 0
         let letterSize:CGFloat = 14
-        let colorBackground = MyDetailsViewController.hexStringToUIColor(hex:"#998DE7")
-        let textColor = MyDetailsViewController.hexStringToUIColor(hex:"#000000")
+        let colorBackground = Colors.hexStringToUIColor(hex:"FFFFFF")
+        let textColor = Colors.hexStringToUIColor(hex:"#000000")
         // "y" is used to set objects position
         
         self.scrollView.backgroundColor = colorBackground
@@ -159,14 +143,6 @@ class MyDetailsViewController: UIViewController, UITabBarControllerDelegate, UIT
             y + spaceHeight*2)
         //self.scrollView.contentSize = CGSize.init(width: screenWidth, height: y + spaceHeight*10)
         
-        
-        
-        
-        
-        
-        
-        
-        
         // Adding objects to be able to do scroll
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(labelName)
@@ -185,26 +161,5 @@ class MyDetailsViewController: UIViewController, UITabBarControllerDelegate, UIT
         return newDate[0]
     }
     
-    // Function to get color using hexadecimal value
-    static private func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-        
-        if ((cString.characters.count) != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
+    
 }

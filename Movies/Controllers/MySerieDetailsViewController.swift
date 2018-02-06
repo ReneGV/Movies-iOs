@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MySeriesDetailsViewController: UIViewController, UITabBarControllerDelegate, UITabBarDelegate {
+class MySeriesDetailsViewController: UIViewController {
     
     @IBOutlet weak var ImageView: UIImageView!
     
@@ -32,14 +32,12 @@ class MySeriesDetailsViewController: UIViewController, UITabBarControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         print(serie.chapterAmount)
-        //self.tabBarController?.delegate = MyDetailsViewController
-        //tabBarController?.delegate = MyDetailsViewController() as! UITabBarController as? UITabBarControllerDelegate
-        tabBarController?.delegate = self
+        
         buildDetailScreen()
         //ImageView.image = serie.getDetailImage()
         navigationItem.title = serie.gender.name
         //print(serie.description)
-        //self.tabBarController?.tabBar.isHidden = true
+        
         
         
         // Do any additional setup after loading the view.
@@ -50,19 +48,6 @@ class MySeriesDetailsViewController: UIViewController, UITabBarControllerDelegat
         // Dispose of any resources that can be recreated.
         
     }
-    
-    /*func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-     let tabBarIndex = tabBarController?.selectedIndex
-     if tabBarIndex == 1 {
-     print("Estoy en series")
-     }
-     else{
-     print("I am in series")
-     }
-     }*/
-    
-    
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -70,7 +55,6 @@ class MySeriesDetailsViewController: UIViewController, UITabBarControllerDelegat
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
      }
-     */
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -84,9 +68,9 @@ class MySeriesDetailsViewController: UIViewController, UITabBarControllerDelegat
         let spaceHeight = screenHeight/40
         var y:CGFloat = 0
         let letterSize:CGFloat = 14
-        let colorBackground = MySeriesDetailsViewController.hexStringToUIColor(hex:"#D03235")
+        let colorBackground = Colors.hexStringToUIColor(hex:"FFFFFF")
         //998DE7
-        let textColor = MySeriesDetailsViewController.hexStringToUIColor(hex:"#000000")
+        let textColor = Colors.hexStringToUIColor(hex:"#000000")
         // "y" is used to set objects position
         
         self.scrollView.backgroundColor = colorBackground
@@ -175,12 +159,6 @@ class MySeriesDetailsViewController: UIViewController, UITabBarControllerDelegat
         
         
         
-        
-        
-        
-        
-        
-        
         // Adding objects to be able to do scroll
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(labelName)
@@ -201,27 +179,6 @@ class MySeriesDetailsViewController: UIViewController, UITabBarControllerDelegat
         return newDate[0]
         
     }
-    // Function to get color using hexadecimal value
-    static private func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-        
-        if ((cString.characters.count) != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
+    
     
 }
